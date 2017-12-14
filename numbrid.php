@@ -30,7 +30,6 @@ echo 'b = '.$b.'<br />';
 echo 'c = '.$c.'<br />';
 echo 'd = '.$d.'<br />';
 
-
 //
 
 $a = 5; $b = 2;
@@ -40,5 +39,24 @@ echo 'a = '.$a.'<br />';
 echo 'b = '.$b.'<br />';
 echo 'c = '.$c.'<br />';
 echo 'd = '.$d.'<br />';
+//
 
+$kord = 1;
+while ($kord <= 5){
+    if ($kord == 3){
+    echo '<i>'.$kord++.'</i><br />';
+
+        break;
+    }
+
+}
+//
+$kord = 1;
+do {
+
+    if ($kord == 3) {
+        continue;
+    }
+    echo '<b>'.$kord.'</b><br />';
+    } while(++$kord <= 5);
 
