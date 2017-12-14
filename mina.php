@@ -6,7 +6,7 @@
  * Time: 12:12
  */
 
- $minuNimi = "Helena";
- echo "Minu nimi on ".$minuNimi. '<br>';
+define('MINU_NIMI','Helena');
+ echo "Minu nimi on ".MINU_NIMI. '<br>';
 
- ?>
+
