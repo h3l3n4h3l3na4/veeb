@@ -44,10 +44,10 @@ echo 'd = '.$d.'<br />';
 $kord = 1;
 while ($kord <= 5){
     if ($kord == 3){
-    echo '<i>'.$kord++.'</i><br />';
-
         break;
     }
+    echo '<i>'.$kord++.'</i><br />';
+
 
 }
 //
