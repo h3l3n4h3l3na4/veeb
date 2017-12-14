@@ -7,6 +7,6 @@
  */
 
 define('MINU_NIMI','Helena');
- echo "Minu nimi on ".MINU_NIMI. '<br>';
+ echo "Minu nimi on ".MINU_NIMI. '<br />';
 
 
