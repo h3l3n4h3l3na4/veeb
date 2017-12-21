@@ -91,7 +91,23 @@ echo '<hr />';
  * Kontrolli kas kohad on vahetatud kasutades
  * valjastaMassiiv funktsiooni
 */
+function vahetaMinMax(&$massiiv){
+    $min = min($massiiv);
+    $max = max($massiiv);
+    echo 'Minimum = '.$min.'<br />';
+    echo 'Maximum = '.$max.'<br />';
+    for ($i = 0; $i < count($massiiv); $i++){
+        if ($massiiv[$i] == $min){
+            $massiiv[$i] = $max;
+        }elseif ($massiiv[$i] == $max){
+            $massiiv[$i] = $min;
+        }
+        echo $massiiv[$i].'<br />';
+    }
+}
 
+vahetaMinMax($testmassiiv);
+valjastaMassiiv($testmassiiv);
 /*
  * 4.
  * Loo funktsioon nimega elementideKorrutis, mis
