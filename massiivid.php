@@ -65,7 +65,20 @@ echo '<hr />';
  * Väljundi loomisel kasutada foreach
  * tsükkel
  * */
+function valjastaMassiiv($massiiv){
+    echo '<table border ="1">';
+    foreach ($massiiv as $element){
+        echo '<tr>';
+            echo '<td>';
+            echo $element;
+            echo '</td>';
+        echo  '</tr>';
+    }
+    echo '</table>';
+}
 
+valjastaMassiiv($testmassiiv);
+echo '<hr />';
 /*
  * 3.
  * Loo funktsioon nimega vahetaMinMax, mis võtab
