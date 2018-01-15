@@ -108,6 +108,9 @@ function vahetaMinMax(&$massiiv){
 
 vahetaMinMax($testmassiiv);
 valjastaMassiiv($testmassiiv);
+
+echo '<hr />';
+
 /*
  * 4.
  * Loo funktsioon nimega elementideKorrutis, mis
@@ -120,8 +123,31 @@ valjastaMassiiv($testmassiiv);
  * Tulemus: 1 * 6 * 5 = 30
 */
 
+function elementideKorrutis($taisarvuMassiiv){
+    $korrutis = 1;
+    $korda = 0;
+    echo 'Korrutise tulemus on: ';
+    for($i = 0; $i < count($taisarvuMassiiv); $i++){
+        if ($taisarvuMassiiv[$i] > 0 and $i % 2 == 0){
+            if ($korda == 0){
+                echo $taisarvuMassiiv[$i];
+                $korda = 1;
+
+            }else{
+                echo ' * '.$taisarvuMassiiv[$i];
+
+            }
+            $korrutis = $korrutis * $taisarvuMassiiv[$i];
+        }
+    }
+    echo ' = '.$korrutis.'<br />';
+}
+elementideKorrutis(array(1,0,6,0,0,3,5));
+
+echo '<hr />';
+
 /*
- * 5.
+* 5.
  * Töötluses kasutada massiiv
  * $massiiv = array(1, 1, 1, 2, 2, 2, 2, 3).
  * Loo funktsioon mitteDubleeri, mis võtab
@@ -132,3 +158,17 @@ valjastaMassiiv($testmassiiv);
  * tsükli abil, samuti EI SAA kasutada
  * grupeerimisfunktisoone ega muuta antud massiivi
  * */
+
+// väljatrükk peab olema 1, 2, 3 näiteks kasuta if lauset
+
+function mitteDubleeri($massiiv){
+    $valjasta = '';
+    foreach ($massiiv as $element){
+        if ($valjasta != $element){
+            $valjasta = $element;
+            echo $element.' ';
+        }
+    }
+}
+mitteDubleeri(array(1,1,1,2,2,2,2,3));
+
