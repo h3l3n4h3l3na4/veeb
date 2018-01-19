@@ -17,8 +17,21 @@ function yhendus(){
         echo mysqli_connect_errno().'<br />';
         return false;
     } else {
-        echo 'Ühendus anmebaasi serveriga on olemas<br />';
+        echo 'Ühendus andmebaasi serveriga on olemas<br />';
         return $yhendus;
     }
 }
 
+function saadaParing($yhendus, $sql) {
+    $tulemus = mysqli_query($yhendus, $sql);
+    if (!$tulemus) {
+        echo 'Probleem päringuga '.$sql.'<br />';
+        echo mysqli_error($yhendus).'<br/>';
+        echo mysgli_errno($yhendus).'<br/>';
+        return false;
+
+    }else {
+        echo 'Päring läks läbi<br />';
+        return true;
+    }
+}
