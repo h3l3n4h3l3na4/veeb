@@ -21,7 +21,7 @@ function yhendus(){
         return $yhendus;
     }
 }
-
+// päringu saamtmise funktsioon
 function saadaParing($yhendus, $sql) {
     $tulemus = mysqli_query($yhendus, $sql);
     if (!$tulemus) {
@@ -29,9 +29,24 @@ function saadaParing($yhendus, $sql) {
         echo mysqli_error($yhendus).'<br/>';
         echo mysgli_errno($yhendus).'<br/>';
         return false;
-
     }else {
         echo 'Päring läks läbi<br />';
-        return true;
+        return $tulemus;
     }
+}
+
+// andmetega päringu saamtmise funktsioon
+function annaAndmed($yhendus, $sql){
+    $tulemus = saadaParing($yhendus, $sql);
+    $andmed = array(); //massiiv kuhu paneme päringuga tulnud andmed
+    if ($tulemus != false) {
+        while ($rida = mysqli_fetch_assoc($tulemus)) {
+            $andmed[] = $rida;
+        }
+    }
+    if (count($andmed) == 0) {
+        return false;
+    }else {
+    // tagastame päringu andmetega täidetud massiivi
+    return $andmed;
 }
