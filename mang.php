@@ -5,11 +5,6 @@
  * Date: 12.01.2018
  * Time: 08:55
  */
-
-/*1. Täienda mängu skript nii, et oleks ka väljastatud millises vahemikus genereeritakse arv - siis mängijal on lihtsam pakkuda väärtused
-2. Täiemda mängu skript nii, et õnnitlemisega koos oleks väljastatud ka info, mitme katsega õige arv on leitud (vihje - lahendada võib sama moodi nagu realiseerisime serveri arvu hoidmine vormis)' */
-
-
 function vorm(){
     $serveriArv = $_POST['serveriArv'];
     $serveriArv = isset($serveriArv) ? $serveriArv: rand(1,20);
@@ -17,7 +12,7 @@ function vorm(){
     $katseteArv = isset($katseteArv) ? ++$katseteArv : 0;
     // echo $serveriArv.'<br />';
     echo '
-    <form action="mang.php" method="post">
+    <form action="'.$_SERVER['PHP_SELF'].'" method="post">
     <input type="hidden" name="serveriArv" value="'.$serveriArv.'">
     <input type="hidden" name="katseteArv" value="'.$katseteArv.'">
     <input type="text" name="kasutajaArv"><br />
