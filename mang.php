@@ -9,6 +9,7 @@
 /*1. Täienda mängu skript nii, et oleks ka väljastatud millises vahemikus genereeritakse arv - siis mängijal on lihtsam pakkuda väärtused
 2. Täiemda mängu skript nii, et õnnitlemisega koos oleks väljastatud ka info, mitme katsega õige arv on leitud (vihje - lahendada võib sama moodi nagu realiseerisime serveri arvu hoidmine vormis)' */
 
+
 function vorm(){
     $serveriArv = $_POST['serveriArv'];
     $serveriArv = isset($serveriArv) ? $serveriArv: rand(1,20);
