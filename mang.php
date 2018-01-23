@@ -8,7 +8,7 @@
 function vorm(){
     $serveriArv = $_POST['serveriArv'];
     $serveriArv = isset($serveriArv) ? $serveriArv: rand(1,20);
-    echo $serveriArv.'<br />';
+    // echo $serveriArv.'<br />';
     echo '
     <form action="mang.php" method="post">
     <input type="hidden" name="serveriArv" value="'.$serveriArv.'">
@@ -19,28 +19,25 @@ function vorm(){
 }
 
 function vormiAndmed(){
-    echo '<pre>';
+    /*echo '<pre>';
     print_r($_POST);
-    echo '</pre>';
+    echo '</pre>';*/
     $korras = false;
     if (empty($_POST)) {
-      echo 'Vorm ei saatnud andmeid<br />';
+//      echo 'Vorm ei saatnud andmeid<br />';
     } else {
-       echo 'Andmed on saadetud<br />';
+ //      echo 'Andmed on saadetud<br />';
         if (empty($_POST['kasutajaArv'])) {
-           echo 'Andmed peavad olema sisestatud<br />';
+//           echo 'Andmed peavad olema sisestatud<br />';
         } else {
-           echo 'Andmed on sisestatud<br />';
+//           echo 'Andmed on sisestatud<br />';
             $korras = true;
             }
     }
-
     return $korras;
 }
 
-
 function arvuKontroll($kasutajaArv, $serveriArv){
-
     if ($kasutajaArv > $serveriArv){
         echo 'Pakutud väärtus on suurem<br />';
     }
@@ -56,12 +53,10 @@ function arvuKontroll($kasutajaArv, $serveriArv){
     }
 }
 
-
 vorm();
 // vormiAndmed();
 if (vormiAndmed()){
     arvuKontroll($_POST['kasutajaArv'], $_POST['serveriArv']);
-
 }else{
     echo 'Andmed peavad olema sisestatud<br />';
 }
